@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="#">
+    <table>
+        <tr>
+            <td>
+                <h1><strong>Personal details</strong></h1>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><label for="first_name"><b>First Name:</b></label></td>
+            <td><input id="first_name" name="first_name" type="text" maxlength="30"></td>
+        </tr>
+        <tr>
+            <td><label for="last_name"><b>Last Name:</b></label></td>
+            <td><input id="last_name" name="last_name" type="text" maxlength="30"></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <fieldset id="gender">
+                    <legend><strong>Gender</strong></legend>
+                    <div>
+                        <input id="gender_m" type="radio" name="gender" value="Male">
+                        <label for="gender_m">Male</label> <br>
+                        <input id="gender_f" type="radio" name="gender" value="Female">
+                        <label for="gender_f">Female</label> <br>
+                        <input id="gender_n" type="radio" name="gender" value="Unspecified">
+                        <label for="gender_n">Unspecified</label>
+                    </div>
+                </fieldset>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <fieldset>
+                    <legend><strong>Birthday:</strong></legend>
+                    <div>
+                        <select name="day" title="Birth day">
+                            <option value="1">1</option>
+                            <option value="1">2</option>
+                            <option value="1">3</option>
+                            <option value="1">4</option>
+                            <option value="1">5</option>
+                            <option value="1">6</option>
+                            <option value="1">7</option>
+                            <option value="1">8</option>
+                            <option value="1">9</option>
+                            <option value="1">10</option>
+                            <option value="1">11</option>
+                            <option value="1">12</option>
+                            <option value="1">13</option>
+                            <option value="1">14</option>
+                            <option value="1">15</option>
+                            <option value="1">16</option>
+                            <option value="1">17</option>
+                            <option value="1">18</option>
+                            <option value="1">19</option>
+                            <option value="1">20</option>
+                            <option value="1">21</option>
+                            <option value="1">22</option>
+                            <option value="1">23</option>
+                            <option value="1">24</option>
+                            <option value="1">25</option>
+                            <option value="1">26</option>
+                            <option value="1">27</option>
+                            <option value="1">28</option>
+                            <option value="1">29</option>
+                            <option value="1">30</option>
+                            <option value="1">31</option>
+                        </select>
+                        <select name="month" title="Birth month">
+                            <option value="1">Jan</option>
+                            <option value="2">Feb</option>
+                            <option value="3">Mar</option>
+                            <option value="4">Apr</option>
+                            <option value="5">May</option>
+                            <option value="6">Jun</option>
+                            <option value="7">Jul</option>
+                            <option value="8">Aug</option>
+                            <option value="9">Sep</option>
+                            <option value="10">Oct</option>
+                            <option value="11">Nov</option>
+                            <option value="12">Dec</option>
+                        </select>
+                        <select name="year" title="Birth year">
+                            <option value="1990">1990</option>
+                            <option value="1990">1991</option>
+                            <option value="1990">1992</option>
+                            <option value="1990">1993</option>
+                            <option value="1990">1994</option>
+                            <option value="1990">1995</option>
+                            <option value="1990">1996</option>
+                            <option value="1990">1997</option>
+                        </select>
+                    </div>
+                </fieldset>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <table>
+                    <tr>
+                        <td>
+                            <fieldset>
+                                <legend><b>Address</b></legend>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <div>
+                                                <label for="address-line1">Address Line 1</label>
+                                                <div>
+                                                    <input id="address-line1" name="address-line1" type="text">
+                                                    <p>Street address, P.O. box, company name, c/o</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <div>
+                                    <label for="address-line2">Address Line 2</label>
+                                    <div>
+                                        <input id="address-line2" name="address-line2" type="text">
+                                        <p>Apartment, suite , unit, building, floor, etc.</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label for="city">City / Town</label>
+                                    <div>
+                                        <input id="city" name="city" type="text">
+                                        <p></p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label for="region">State / Province / Region</label>
+                                    <div>
+                                        <input id="region" name="region" type="text">
+                                        <p></p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label for="postal-code">Zip / Postal Code</label>
+                                    <div>
+                                        <input id="postal-code" name="postal-code" type="text">
+                                        <p></p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label for="country">Country</label>
+                                    <div>
+                                        <select id="country" name="country">
+                                            <option value="" selected="selected">(please select a country)</option>
+                                            <option value="DE">Germany</option>
+                                            <option value="GR">Greece</option>
+                                            <option value="IT">Italy</option>
+                                            <option value="JP">Japan</option>
+                                            <option value="RO">Romania</option>
+                                            <option value="GB">United Kingdom</option>
+                                            <option value="US">United States</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Do you like this image?
+                <img src="minions.jpg" alt="minions">
+            </td>
+            <td>
+                <fieldset>
+                    <legend>Tick a box</legend>
+                    <label for="checkbox_no">No</label>
+                    <input type="checkbox" id="checkbox_no" name="checkbox_no">
+                    <label for="checkbox_yes">Yes</label>
+                    <input type="checkbox" id="checkbox_yes" name="checkbox_yes">
+                </fieldset>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="description">Describe yourself:</label>
+            </td>
+            <td>
+                <textarea id="description" rows="5" cols="50"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="multiselect">What do you like?</label></td>
+            <td>
+                <select id="multiselect" multiple="multiple">
+                    <option value="pref[]">ISS</option>
+                    <option value="pref[]">MPP</option>
+                    <option value="pref[]">WEB</option>
+                    <option value="pref[]">SGBD</option>
+                    <option value="pref[]">AI</option>
+                    <option value="pref[]">None ot the above</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Notes:
+            </td>
+            <td>
+                <ol type="I">
+                    <li>
+                        Fields marked with * are required
+                        <ul>
+                            <li>First inner list element 1</li>
+                            <li>First inner list element 2</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Fields not marked with * are not required
+                        <ol type="A">
+                            <li>Second inner list element 1</li>
+                            <li>Second inner list element 2</li>
+                            <li>Second inner list element 3</li>
+                            <li>Second inner list element 4</li>
+                        </ol>
+                    </li>
+                </ol>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type="reset">Reset form</button>
+            </td>
+            <td>
+                <button type="submit">Submit button</button>
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

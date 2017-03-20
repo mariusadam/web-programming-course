@@ -1,0 +1,51 @@
+/* Resets default styling */
+.social-media-icons {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Displays the list-items in a row */
+.social-media-icons li {
+    display: inline-block;
+}
+
+/* Set up the social media icons and enable transitioning for a smooth hovering effect */
+.social-media-icons a {
+    background-image: url(../img/social-icons.png);
+    background-image: url(../img/social-icons.svg), none; /* IE8 does not support multiple backgrounds (even when it is empty), so reverts to the former rule with the .png */
+    background-repeat: no-repeat;
+    display: block;
+    height: 58px;
+    transition: all 350ms ease-out;
+    -webkit-transition: all 350ms ease-out;
+    -o-transition: all 350ms ease-out;
+    width: 50px;
+}
+
+.social-media-icons a:hover {
+    background-position-y: 2px; /* Bonus image movement, no support by Firefox and Opera. Requires images with similar y position. */
+    filter: alpha(opacity=80); /* Fallback for older versions of IE */
+    opacity: 0.8;
+}
+
+/* Move the background to the right position for each social network */
+.twitter {
+    background-position: 0 0; /* Obviously, this is obsolete to use here, but it illustrates the fact the twitter image is the first image */
+}
+
+.facebook {
+    background-position: -53px 0;
+}
+
+.dribbble {
+    background-position: -106px 0;
+}
+
+.pinterest {
+    background-position: -159px 0;
+}
+
+.deviantart {
+    background-position: -212px 0;
+}
