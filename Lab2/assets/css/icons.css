@@ -1,51 +1,118 @@
-/* Resets default styling */
-.social-media-icons {
-    list-style: none;
+body {
     margin: 0;
     padding: 0;
+    font-size: 12px;
+    font-family: Helvetica, Arial, sans-serif;
 }
 
-/* Displays the list-items in a row */
-.social-media-icons li {
-    display: inline-block;
-}
-
-/* Set up the social media icons and enable transitioning for a smooth hovering effect */
-.social-media-icons a {
-    background-image: url(../img/social-icons.png);
-    background-image: url(../img/social-icons.svg), none; /* IE8 does not support multiple backgrounds (even when it is empty), so reverts to the former rule with the .png */
-    background-repeat: no-repeat;
+ul#social-networking {
+    margin: 0 0 0 0;
+    text-align: center;
     display: block;
-    height: 58px;
-    transition: all 350ms ease-out;
-    -webkit-transition: all 350ms ease-out;
-    -o-transition: all 350ms ease-out;
-    width: 50px;
+    float: left;
+    padding: 0 0 0 0;
+    font-size: 12px;
+
 }
 
-.social-media-icons a:hover {
-    background-position-y: 2px; /* Bonus image movement, no support by Firefox and Opera. Requires images with similar y position. */
-    filter: alpha(opacity=80); /* Fallback for older versions of IE */
-    opacity: 0.8;
+#social-networking li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background: url(../../assets/img/css-pr8-resized.png) no-repeat;
 }
 
-/* Move the background to the right position for each social network */
-.twitter {
-    background-position: 0 0; /* Obviously, this is obsolete to use here, but it illustrates the fact the twitter image is the first image */
+#social-networking li, #social-networking a {
+    width: 54px;
+    height: 54px;
+    display: block;
+    float: left;
 }
 
-.facebook {
-    background-position: -53px 0;
+ul#social-networking li#facebook {
+    background-position: 0 -54px;
 }
 
-.dribbble {
-    background-position: -106px 0;
+ul#social-networking li#dots {
+    background-position: -54px -54px;
 }
 
-.pinterest {
-    background-position: -159px 0;
+ul#social-networking li#globe {
+    background-position: -108px -54px;
 }
 
-.deviantart {
-    background-position: -212px 0;
+ul#social-networking li#gplus {
+    background-position: -162px -54px;
+}
+
+ul#social-networking li#linkedin {
+    background-position: -216px -54px;
+}
+
+ul#social-networking li#pinterest {
+    background-position: -270px -54px;
+}
+
+ul#social-networking li#wifi {
+    background-position: -324px -54px;
+}
+
+ul#social-networking li#skype {
+    background-position: -378px -54px;
+}
+
+ul#social-networking li#twitter {
+    background-position: -432px -54px;
+}
+
+ul#social-networking li#vimeo {
+    background-position: -486px -54px;
+}
+
+ul#social-networking li#youtube {
+    background-position: -540px -54px;
+}
+
+ul#social-networking li#facebook:hover {
+    background-position: 0 0;
+}
+
+ul#social-networking li#dots:hover {
+    background-position: -54px -0px;
+}
+
+ul#social-networking li#globe:hover {
+    background-position: -108px -0px;
+}
+
+ul#social-networking li#gplus:hover {
+    background-position: -162px -0px;
+}
+
+ul#social-networking li#linkedin:hover {
+    background-position: -216px -0px;
+}
+
+ul#social-networking li#pinterest:hover {
+    background-position: -270px -0px;
+}
+
+ul#social-networking li#wifi:hover {
+    background-position: -324px -0px;
+}
+
+ul#social-networking li#skype:hover {
+    background-position: -378px -0px;
+}
+
+ul#social-networking li#twitter:hover {
+    background-position: -432px -0px;
+}
+
+ul#social-networking li#vimeo:hover {
+    background-position: -486px -0px;
+}
+
+ul#social-networking li#youtube:hover {
+    background-position: -540px -0px;
 }
