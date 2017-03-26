@@ -116,3 +116,37 @@ ul#social-networking li#vimeo:hover {
 ul#social-networking li#youtube:hover {
     background-position: -540px -0px;
 }
+
+footer {
+    width: 100%;
+    background: none repeat scroll 0 0;
+    position: fixed;
+    bottom: 10px;
+    left: 0;
+
+}
+
+.footer_contents {
+    width: 594px;
+    margin: auto;
+}
+
+.table-image {
+    width:100px;
+    height: auto;
+}
+
+.table-image:hover {
+    opacity: 0.6;
+    transform:scale(1.2);
+}
+
+.centered {
+    margin-left:auto;
+    margin-right:auto;
+    text-align: center;
+}
+
+td {
+    padding: 10px;
+}
