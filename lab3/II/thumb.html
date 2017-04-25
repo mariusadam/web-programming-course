@@ -16,29 +16,70 @@
         }
     </style>
     <script>
-        function previewFile(imgUrl) {
+        function previewFile(e) {
+            var imgUrl = e.currentTarget.children[0].src;
             var preview = document.getElementById('preview-img');
             preview.src = imgUrl;
+        }
+
+        function getImages() {
+            return [
+                'img/2.jpg',
+                'img/2.jpg',
+                'img/2.jpg',
+                'img/2.jpg'
+            ];
+        }
+        function drawTable(tid) {
+            var tbl = document.getElementById(tid);
+            eraseTable(tbl);
+            tbl.setAttribute('border', '1');
+            var tbdy = document.createElement('tbody');
+            var imgs = getImages();
+            var root = Math.sqrt(imgs.length);
+            var cols = Math.floor(root);
+            var rows = cols;
+            if (root > cols) {
+                rows += 1;
+            }
+
+            for (var i = 0; i < rows; i++) {
+                var tr = document.createElement('tr');
+                for (var j = 0; j < cols; j++) {
+                    var poz = i * cols + j;
+                    if (poz > imgs.length) {
+                        break;
+                    }
+                    var imgPath = imgs[poz];
+                    var td = document.createElement('td');
+                    var img = document.createElement('img');
+                    img.src = imgPath;
+                    img.classList.add('thumbnail');
+                    td.onmouseover = previewFile;
+                    td.appendChild(img);
+                    tr.appendChild(td)
+                }
+                tbdy.appendChild(tr);
+            }
+            tbl.appendChild(tbdy);
+        }
+        function eraseTable(tbl) {
+            var tb = tbl.getElementsByTagName("tbody");
+            if (tb.length > 0) {
+                tbl.removeChild(tb[0]);
+            }
         }
     </script>
 </head>
 
-<body>
-
-</body>
-
-<table>
+<body onload="drawTable('tid')">
+<table id="tid">
     <tbody>
-    <tr>
-        <td onmouseover="previewFile('img/1.png')">
-            <img class="thumbnail" src="img/1.png">
-        </td>
-        <td onmouseover="previewFile('img/2.png')">
-            <img class="thumbnail" src="img/2.png">
-        </td>
-    </tr>
     </tbody>
 </table>
+</body >
+
+
 
 <div id="preview">
     <img id="preview-img" src="">
