@@ -22,12 +22,36 @@
             preview.src = imgUrl;
         }
 
+        function shuffleArray(o) {
+            for (var j, x, i = o.length - 1; i; i--) {
+                j = parseInt(Math.random() * i);
+                x = o[i];
+                o[i] = o[j];
+                o[j] = x;
+            }
+            return o;
+        }
+
         function getImages() {
             return [
+                'img/1.png',
+                'img/1.png',
+                'img/1.png',
+                'img/1.png',
+                'img/1.png',
+                'img/1.png',
                 'img/2.jpg',
-                'img/2.jpg',
-                'img/2.jpg',
-                'img/2.jpg'
+                'img/3.jpg',
+                'img/3.jpg',
+                'img/3.jpg',
+                'img/3.jpg',
+                'img/3.jpg',
+                'img/4.jpg',
+                'img/4.jpg',
+                'img/4.jpg',
+                'img/4.jpg',
+                'img/4.jpg',
+                'img/4.png'
             ];
         }
         function drawTable(tid) {
@@ -36,6 +60,7 @@
             tbl.setAttribute('border', '1');
             var tbdy = document.createElement('tbody');
             var imgs = getImages();
+            shuffleArray(imgs);
             var root = Math.sqrt(imgs.length);
             var cols = Math.floor(root);
             var rows = cols;

@@ -1,0 +1,13 @@
+/*#pieces-table tr td:hover {*/
+/*opacity: 0.6;*/
+/*transform:scale(1.025);*/
+/*}*/
+#puzzle-table tr td:hover {
+    opacity: 0.6;
+    transform:scale(1.025);
+}
+
+.container {
+    text-align: center;
+    padding: 50px;
+}
