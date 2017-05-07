@@ -1,20 +1,3 @@
-// Hello.
-//
-// This is JSHint, a tool that helps to detect errors and potential
-// problems in your JavaScript code.
-//
-// To start, simply enter some JavaScript anywhere on this page. Your
-// report will appear on the right side.
-//
-// Additionally, you can toggle specific options in the Configure
-// menu.
-
-function main() {
-    return 'Hello, World!';
-}
-
-main();
-
 Array.prototype.remove = function () {
     var what, a = arguments, L = a.length, ax;
     while (L && this.length) {
@@ -377,6 +360,10 @@ function Puzzle(difficulty, imagePath) {
         }
     }
 
+    /**
+     *
+     * @param {MouseEvent} e
+     */
     function shufflePuzzle(e) {
         $(_puzzleTable).off('click');
         _remainingPieces = _orderedPieces.slice();
@@ -398,18 +385,17 @@ function Puzzle(difficulty, imagePath) {
         if (_selectedTile !== null) {
             _selectedTile.fade();
         }
-
         var currentTile = findTileByDiv(e.currentTarget, _piecesTiles);
-
-        // toggle effect
-        if (_selectedTile !== null && _selectedTile === currentTile) {
-            _selectedTile.fade();
-            _selectedTile = null;
-            return;
-        }
+        var previousTile = _selectedTile;
         _selectedTile = currentTile;
+
         if (_selectedTile !== null) {
             _selectedTile.select();
+
+            if (previousTile === _selectedTile) {
+                _selectedTile.fade();
+                _selectedTile = null;
+            }
         }
     }
 
@@ -445,7 +431,6 @@ function Puzzle(difficulty, imagePath) {
             for (var i = 0; i < _piecesTiles.length; i++) {
                 if (_piecesTiles[i].piece === null) {
                     _piecesTiles[i].draw(targetPiece);
-                    // _piecesTiles[i].setIsPiece();
                     break;
                 }
             }
@@ -499,10 +484,5 @@ $(document).ready(
     function () {
         var puzzle = new Puzzle(3, 'img/mke2.png');
         puzzle.init();
-
-        $("#pieces-table").on("drags", "td", function (e) {
-
-        });
-
     }
 );
