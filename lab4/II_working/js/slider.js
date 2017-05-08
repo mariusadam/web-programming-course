@@ -22,14 +22,14 @@ $(document).ready(function () {
     addImages(7);
 
     var currPosition = 0;
-    var slides = $('.box');
+    var $slides = $('.box');
 
     var speed = 1000;
 
     var interval = setInterval(changePosition, speed);
 
     function changePosition() {
-        moveSlide(currPosition % slides.length);
+        moveSlide(currPosition % $slides.length);
         currPosition++;
     }
 
@@ -40,25 +40,25 @@ $(document).ready(function () {
      */
     function moveSlide(index) {
 
-        $(slides[index]).animate({
+        $($slides[index]).animate({
                 right: '-50%'
             },
             500
             , function () {
-                $(slides[index]).css('right', '150%');
-                $(slides[index]).appendTo('#container');
+                $($slides[index]).css('right', '150%');
+                $($slides[index]).appendTo('#container');
             }
         );
 
-        $(slides[index]).next().animate({
+        $($slides[index]).next().animate({
                 right: '50%'
             }, 500
         );
     }
 
-    var modal = $('#show-img-modal');
+    var $modal = $('#show-img-modal');
 
-    slides.click(function (e) {
+    $slides.click(function (e) {
         clearInterval(interval);
 
         var img = $('#' + this.id + ' > img');
@@ -67,11 +67,11 @@ $(document).ready(function () {
             $(img).attr('alt')
         );
 
-        modal.show();
+        $modal.show();
     });
 
     $('.closeable').click(function () {
-        $(modal).hide();
+        $modal.hide();
         interval = setInterval(changePosition, speed);
     })
 });

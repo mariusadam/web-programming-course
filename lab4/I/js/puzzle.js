@@ -232,9 +232,9 @@ function Puzzle(difficulty, imagePath) {
      * Loads the image and adds and event listener to load
      */
     this.init = function () {
-        _img = new Image();
-        _img.addEventListener('load', onImage, false);
-        _img.src = imagePath;
+        _img = $('<img>')
+            .attr('src', imagePath)
+            .on('load', onImage)[0];
     };
 
     /**
@@ -285,7 +285,7 @@ function Puzzle(difficulty, imagePath) {
      */
     function drawCells(tbl, divClickHandler) {
         var tiles = [];
-        var tbody = $(document.createElement('tbody'));
+        var $tbody = $(document.createElement('tbody'));
         $(tbl)
             .empty()
             .css({
@@ -294,12 +294,12 @@ function Puzzle(difficulty, imagePath) {
                 border: '1px solid black'
             })
             .attr('border', 1)
-            .append(tbody);
+            .append($tbody);
 
         for (var i = 0; i < _difficulty; i++) {
-            var tr = $(document.createElement('tr'));
+            var $tr = $(document.createElement('tr'));
             for (var j = 0; j < _difficulty; j++) {
-                var innerDiv = $(document.createElement('div'))
+                var $innerDiv = $(document.createElement('div'))
                     .attr('draggable', true)
                     .css({
                         width: _pieceWidth + 'px',
@@ -307,14 +307,14 @@ function Puzzle(difficulty, imagePath) {
                     })
                     .click(divClickHandler);
 
-                tiles.push(new Tile(innerDiv[0], _imgUrl));
-                tr.append(
+                tiles.push(new Tile($innerDiv[0], _imgUrl));
+                $tr.append(
                     $(document.createElement('td'))
                         .attr('droppable', true)
-                        .append(innerDiv)
+                        .append($innerDiv)
                 );
             }
-            tbody.append(tr);
+            $tbody.append($tr);
         }
 
         return tiles;
@@ -326,12 +326,10 @@ function Puzzle(difficulty, imagePath) {
      */
     function buildPieces() {
         var i;
-        var piece;
         var xPos = 0;
         var yPos = 0;
         for (i = 0; i < _difficulty * _difficulty; i++) {
-            piece = new Piece(xPos, yPos);
-            _orderedPieces.push(piece);
+            _orderedPieces.push(new Piece(xPos, yPos));
             xPos += _pieceWidth;
             if (xPos >= _puzzleWidth) {
                 xPos = 0;
